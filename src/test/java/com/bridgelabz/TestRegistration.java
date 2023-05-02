@@ -1,58 +1,62 @@
 package com.bridgelabz;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterAll;
 
+import static org.junit.Assert.*;
+//givenwhenshouldreturn
 public class TestRegistration {
 
     @Test
-    public void testValidFirstName() {
+    public void GivenFirst_NameWhenValid_ShouldReturnTrue() {
         assertTrue(Registration.validateFirstName("John"));
     }
 
     @Test
-    public void testInvalidFirstName() {
+    public void GivenFirstName_WhenInValid_ShouldReturnFalse() {
         assertFalse(Registration.validateFirstName("J"));
     }
 
     @Test
-    public void testValidLastName() {
+    public void GivenLastName_WhenValidShould_ReturnTrue() {
         assertTrue(Registration.validateLastName("Doe"));
     }
 
     @Test
-    public void testInvalidLastName() {
+    public void GivenLastName_WhenInValidShould_ReturnFalse() {
         assertFalse(Registration.validateLastName("D"));
     }
 
     @Test
-    public void testValidEmail() {
-        assertTrue(Registration.validateEmail("john.doe@example.com"));
+    public void GivenEmail_WhenValid_ShouldReturnTrue() {
+        assertEquals(true,Registration.validateEmail("john.doe@example.com"));
     }
 
     @Test
-    public void testInvalidEmail() {
+    public void GivenEmail_WhenInValid_ShouldReturnFalse()
+    {
         assertFalse(Registration.validateEmail("johndoe@example"));
     }
 
     @Test
-    public void testValidMobile() {
-        assertTrue(Registration.validateMobile("91 9919819801"));
+    public void GivenMobileNumber_WhenValidShould_ReturnTrue() {
+        assertTrue(Registration.validateMobile("+919919819801"));
     }
 
     @Test
-    public void testInvalidMobile() {
+    public void GivenMobileNumberWhenInValidShouldReturnFalse() {
         assertFalse(Registration.validateMobile("919919819801"));
     }
 
     @Test
-    public void testValidPassword() {
+    public void GivenPasswordWhenValidShouldReturnTrue() {
         assertTrue(Registration.validatePassword("Passw0rd!"));
     }
 
     @Test
-    public void testInvalidPassword() {
+    public void GivenPasswordWhenInValidShouldReturnFalse() {
         assertFalse(Registration.validatePassword("password"));
     }
+
 
 }
